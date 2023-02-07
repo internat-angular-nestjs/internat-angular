@@ -1,0 +1,55 @@
+<div class="login-wrapper">
+  <form #loginform="ngForm" (ngSubmit)="register(loginform.value.familyUser , loginform.value.nameUser ,loginform.value.emailUser, loginform.value.passwordUser ,loginform.value.role ,loginform.value.phoneNumber ,loginform.value.signature , loginform.value.dateOfBirth)" class="login">
+      <section class="title">
+          <h3 class="welcome">Welcome to</h3>
+SIGN UP          <h5 class="hint">Use your Company ID to create an account</h5>
+      </section>
+      <div class="login-group">
+        <clr-input-container>
+            <label class="clr-sr-only">Family Name</label>
+            <input type="adress" name="familyUser" clrInput placeholder="family name" [(ngModel)]="loginform.value.familyUser"/>
+        </clr-input-container>
+        <clr-input-container>
+            <label class="clr-sr-only">First Name</label>
+            <input type="adress" name="nameUser" clrInput placeholder="first name" [(ngModel)]="loginform.value.nameUser"/>
+        </clr-input-container>
+          <clr-input-container>
+              <label class="clr-sr-only">email</label>
+              <input type="adress" name="emailUser" clrInput placeholder="email" [(ngModel)]="loginform.value.emailUser"/>
+          </clr-input-container>
+          <clr-password-container>
+              <label class="clr-sr-only">Password</label>
+              <input type="password" name="passwordUser" clrPassword placeholder="Password" [(ngModel)]="loginform.value.passwordUser"/>
+          </clr-password-container>
+           <clr-input-container>
+              <label class="clr-sr-only">role </label>
+              <input type="adress" name="role" clrInput placeholder="role" [(ngModel)]="loginform.value.role"/>
+          </clr-input-container>
+          
+          <clr-input-container>
+            <label class="clr-sr-only">Phone Number</label>
+            <input type="adress" name="phoneNumber" clrInput placeholder="phonenumber" [(ngModel)]="loginform.value.phoneNumber"/>
+        </clr-input-container>
+        
+        <clr-input-container>
+            <label class="clr-sr-only">signature</label>
+            <input type="adress" name="signature" clrInput placeholder="signature" [(ngModel)]="loginform.value.signature"/>
+        </clr-input-container>
+        
+        <clr-input-container>
+            <label class="clr-sr-only">date of Birth</label>
+            <input type="date" name="dateOfBirth" clrInput placeholder="date of birth" [(ngModel)]="loginform.value.dateOfBirth"/>
+        </clr-input-container>
+          
+          <clr-checkbox-wrapper>
+              <label>Remember me</label>
+              <!-- <input type="checkbox" name="rememberMe" clrCheckbox [(ngModel)]="form.rememberMe"/> -->
+          </clr-checkbox-wrapper>
+          <div class="error active">
+              Invalid user name or password
+          </div>
+          <button   class="btn btn-primary">NEXT</button>
+          <a href="javascript://" class="signup">Sign up for a Company ID</a>
+      </div >
+  </form>
+</div>

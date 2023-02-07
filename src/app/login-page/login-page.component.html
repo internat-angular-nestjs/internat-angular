@@ -1,0 +1,31 @@
+<div class="login-wrapper">
+  <form #loginform="ngForm" (ngSubmit)="onSubmit(loginform.value.emailUser, loginform.value.passwordUser)" class="login">
+      <section class="title">
+          <h3 class="welcome">Welcome to</h3>
+LOGIN          <h5 class="hint">Use your Company ID to sign in or create one now</h5>
+      </section>
+      <div class="login-group">
+          <clr-input-container>
+              <label class="clr-sr-only">email</label>
+              <input type="adress" name="emailUser" clrInput placeholder="email" [(ngModel)]="loginform.value.emailUser"/>
+          </clr-input-container>
+          <clr-password-container>
+              <label class="clr-sr-only">Password</label>
+              <input type="password" name="passwordUser" clrPassword placeholder="Password" [(ngModel)]="loginform.value.passwordUser"/>
+          </clr-password-container>
+          <select formControlName="country">
+            <option [ngValue]="null" disabled>Select Country</option>
+            <option *ngFor="let role of roles" [ngValue]="role.id">{{role.name}}</option>
+          </select>
+          <clr-checkbox-wrapper>
+              <label>Remember me</label>
+              <!-- <input type="checkbox" name="rememberMe" clrCheckbox [(ngModel)]="form.rememberMe"/> -->
+          </clr-checkbox-wrapper>
+          <div class="error active">
+             forgot password?
+          </div>
+          <button   class="btn btn-primary">NEXT</button>
+          <a href="register" class="signup">Sign up for a Company ID</a>
+      </div>
+  </form>
+</div>

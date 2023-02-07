@@ -1,0 +1,102 @@
+<!-- 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="loggingout()">Logout</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  </nav> -->
+
+
+<header class="header-6">
+    <div class="branding">
+        <a  class="nav-link">
+            <cds-icon shape="vm-bug"></cds-icon>
+            <span class="title">Clarity Design</span>
+        </a>
+    </div>
+    <div class="header-actions">
+        <a (click)="loggingout()" class="nav-link nav-text">
+            Log Out
+        </a>
+    </div>
+    
+</header>
+
+  <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+<!-- 
+  <table>
+    <tr>
+      <th>identifier</th>
+      <th>email</th>
+      <th>createdAt</th>
+  <th>updatedAt</th>
+    </tr>
+    <tr  *ngFor="let user of userList; let i=index">
+      <div class="userList-container" 
+      *ngIf="searchText==='' || user.nameUser.toLowerCase().includes(searchText)">
+      <div>
+      <td>{{i+1}}</td>
+      <td>{{user.emailUser}}</td>
+      <td>{{user.familyUser}}</td>
+      <td>{{user.nameUser}}</td>
+      <button (click)="deleteUser(user.id)">delete this user</button>
+    </div>
+    </div>
+    </tr>
+  </table> -->
+
+  <!-- <ngx-paypal [config]="payPalConfig"></ngx-paypal> -->
+
+  <!-- <div id="myPaybalButtons"></div> -->
+  <clr-datagrid>
+    <clr-dg-column>User ID</clr-dg-column>
+    <clr-dg-column>First name</clr-dg-column>
+    <clr-dg-column>Last name</clr-dg-column>
+    <clr-dg-column>Email</clr-dg-column>
+    <clr-dg-column>super admin options</clr-dg-column>
+
+    <clr-dg-row *ngFor="let user of userList; let i=index">
+      <clr-dg-cell *ngIf="searchText==='' || user.nameUser.toLowerCase().includes(searchText)">
+
+        <clr-dg-cell>{{i+1}}</clr-dg-cell>
+        <clr-dg-cell>{{user.nameUser}}</clr-dg-cell>
+        <clr-dg-cell>{{user.familyUser }}</clr-dg-cell>
+        <clr-dg-cell>{{user.emailUser}}</clr-dg-cell>
+      
+        <button (click)="deleteUser(user.id)">delete this user</button>
+      </clr-dg-cell>
+
+    </clr-dg-row>
+
+    <clr-dg-footer>{{userList.length}} users</clr-dg-footer>
+</clr-datagrid>
